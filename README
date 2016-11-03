@@ -1,0 +1,33 @@
+This script removes the watermark from various guides.
+For it to work you must first get the following tools (assuming you have RHEL 6.x):
+
+  - qpdf (http://qpdf.sourceforge.net)
+    compile and install from source code.
+
+  - pdftk (https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit)
+    install rpm file for you distribution, i.e. pdftk-2.02-1.el6.x86_64.rpm
+
+  - exiftool (http://www.sno.phy.queensu.ca/~phil/exiftool)
+    perl library, compile and install from source code.
+
+After installing these tools you need to set the following variables when modifying the script via any text editor:
+
+  QPDF="/path/to/qpdf"
+  PDFTK="/path/to/pdftk"
+  EXIFTOOL="/path/to/exiftool"
+
+That's it for setting up the script to work.
+Help message:
+
+	strip_watermarks - remove watermarks from guides.
+
+        strip_watermarks.sh [-h] -i <INPUT_FILE>
+
+        -h - print this message.
+        -i - input filename.
+
+	Example:
+
+	$ ./strip_watermarks.sh -i file.pdf
+	Removing watermark(s) from file.pdf...
+	Done! Saved to "file_nw.pdf"
